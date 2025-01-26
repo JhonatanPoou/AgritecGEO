@@ -283,9 +283,8 @@ select:focus {
 #btnSiguienteActividades:hover {
   background-color: #218838;
 }
-
 .actividad-inputs {
- display: none; /* Se oculta por defecto hasta que el checkbox se marque */
+    display: none; /* Se oculta por defecto hasta que el checkbox se marque */
     margin-top: 10px;
     padding: 10px;
     background-color: #f1f1f1;
@@ -296,37 +295,12 @@ select:focus {
     gap: 15px;
 }
 
+/* 🔥 Hace que el contenedor se muestre cuando el checkbox está marcado */
 .opciones-checkbox input[type="checkbox"]:checked + .actividad-inputs {
-    display: flex;
+    display: flex !important;
 }
 
 /* 📌 Input de cantidad (más redondeado y moderno) */
-.actividad-inputs input[type="number"] {
-  width: 140px;
-  height: 30px;
-  padding: 5px;
-  display:none;
-  flex-direction: row;
-  gap: 10 px;
-  align-items: center;
-  font-size: 1rem;
-  text-align: center;
-  border: 1px solid #ccc;
-  
-  border-radius: 5px; /* Más redondeado */
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.actividad-inputs input[type="date"] {
-    width: 140px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-
-/* 🎨 Efecto cuando el usuario selecciona el input */
 .actividad-inputs input[type="number"] {
     width: 60px;
     height: 30px;
@@ -334,16 +308,33 @@ select:focus {
     border-radius: 10px;
     border: 1px solid #ccc;
     padding: 5px;
+    background: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
+/* 📅 Input de fecha */
+.actividad-inputs input[type="date"] {
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: white;
+    text-align: center;
+}
+
+/* 🎨 Etiquetas de cantidad y fecha */
 .label-cantidad, .label-fecha {
     font-size: 0.9rem;
     font-weight: bold;
     color: #333;
+    margin-right: 5px;
     min-width: 150px;
 }
 
-.cantidad-input {
+/* 🎨 Ajuste extra para el contenedor de inputs */
+.cantidad-input, .fecha-input {
     width: 80px;
     padding: 8px;
     font-size: 1rem;
@@ -353,13 +344,8 @@ select:focus {
     background-color: white;
 }
 
-.fecha-input {
-    width: 180px;
-    padding: 8px;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background-color: white;
-    text-align: center;
+/* 📌 Hace que los inputs sean visibles cuando el checkbox se activa */
+.opciones-checkbox input[type="checkbox"]:checked ~ .actividad-inputs {
+    display: flex !important;
 }
 
