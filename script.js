@@ -142,6 +142,15 @@ function loadClientsByCountry(paisSeleccionado) {
         });
     }
 
+    function handleMultipleSelection() {
+    document.querySelectorAll('.opcion-segmento').forEach(button => {
+        button.addEventListener('click', function () {
+            this.classList.toggle('selected'); // ✅ Activa/desactiva el botón seleccionado
+        });
+    });
+}
+
+
     //Evento ordenes de trabajo.
     function handleOrdenesTrabajo() {
     // 📌 Escuchar el cambio en los radio buttons de la pregunta 7
@@ -261,9 +270,8 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
 
     loadCountries();
     handleDependencias();
-handleOrdenesTrabajo();
-
-
+    handleOrdenesTrabajo();
+    handleMultipleSelection();
     handleActividadInputs();
 
     
