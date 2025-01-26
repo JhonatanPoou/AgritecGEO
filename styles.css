@@ -473,6 +473,18 @@ select:focus {
     }
 }
 
+.encabezado-formulario {
+    background: linear-gradient(to right, #2D3748, #4A5568); /* Degradado moderno */
+    color: white;
+    text-align: center;
+    font-size: 1.8rem; /* Ajuste de tamaño */
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px; /* Separación del contenido */
+}
+
 
 .pregunta p {
     font-weight: bold; /* Aplica negrita solo al texto de las preguntas */
