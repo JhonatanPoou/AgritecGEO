@@ -143,23 +143,23 @@ function loadClientsByCountry(paisSeleccionado) {
     }
 
 //Activadores de checkbox de cantidad de actividades y ultimo registro de actividades.
-    function handleActividadInputs() {
+function handleActividadInputs() {
     document.querySelectorAll('.opciones-checkbox input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function () {
             let labor = this.value;
-            let cantidadInput = document.querySelector(`.cantidad-input[data-labor="${labor}"]`);
-            let fechaInput = document.querySelector(`.fecha-input[data-labor="${labor}"]`);
-
+            let container = this.closest("label").nextElementSibling; // Encuentra el contenedor de inputs
+            
             if (this.checked) {
-                cantidadInput.style.display = "inline-block";
-                fechaInput.style.display = "inline-block";
+                container.style.display = "flex"; // Muestra los inputs cuando se marca el checkbox
             } else {
-                cantidadInput.style.display = "none";
-                fechaInput.style.display = "none";
+                container.style.display = "none"; // Oculta los inputs cuando se desmarca
+                container.querySelector(".cantidad-input").value = ""; // Resetea la cantidad
+                container.querySelector(".fecha-input").value = ""; // Resetea la fecha
             }
         });
     });
 }
+
 
     
     document.getElementById('nextBtn')?.addEventListener('click', () => {
