@@ -291,9 +291,11 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
         toggleNavigationButtons('seccionCliente');
     });
 
-    document.getElementById('btnSiguienteActividades')?.addEventListener('click', () => {
-        alert("✔️ Sección completada. Aquí iría la siguiente sección o acción.");
-    });
+   document.getElementById('btnSiguienteActividades')?.addEventListener('click', () => {
+    toggleSeccion('seccionActividades', 'seccionAvanzada');
+    toggleNavigationButtons('seccionAvanzada');
+});
+
 
     loadCountries();
     handleDependencias();
