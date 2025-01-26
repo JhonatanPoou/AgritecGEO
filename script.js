@@ -101,19 +101,22 @@ function loadClientsByCountry(paisSeleccionado) {
         }, 500);
     }
 
-    function toggleNavigationButtons(currentSection) {
-        document.querySelectorAll('.btn-navegacion').forEach(btn => {
-            btn.style.visibility = 'hidden';
-        });
-        
-        if (currentSection === 'seccionCliente') {
-            document.getElementById('btnVolver').style.visibility = 'visible';
-            document.getElementById('btnSiguiente').style.visibility = 'visible';
-        } else if (currentSection === 'seccionActividades') {
-            document.getElementById('btnVolverActividades').style.visibility = 'visible';
-            document.getElementById('btnSiguienteActividades').style.visibility = 'visible';
-        }
+ function toggleNavigationButtons(currentSection) {
+    document.querySelectorAll('.btn-navegacion').forEach(btn => {
+        btn.style.visibility = 'hidden';
+    });
+
+    if (currentSection === 'seccionCliente') {
+        document.getElementById('btnVolver').style.visibility = 'visible';
+        document.getElementById('btnSiguiente').style.visibility = 'visible';
+    } else if (currentSection === 'seccionActividades') {
+        document.getElementById('btnVolverActividades').style.visibility = 'visible';
+        document.getElementById('btnSiguienteActividades').style.visibility = 'visible';
+    } else if (currentSection === 'seccionAvanzada') {
+        document.getElementById('btnVolverAvanzada').style.visibility = 'visible';
+        document.getElementById('btnSiguienteAvanzada').style.visibility = 'visible';
     }
+}
 
     function handleDependencias() {
         document.querySelectorAll('.pregunta input[type="radio"]').forEach(input => {
