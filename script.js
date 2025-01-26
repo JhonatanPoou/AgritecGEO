@@ -142,6 +142,48 @@ function loadClientsByCountry(paisSeleccionado) {
         });
     }
 
+    //Evento ordenes de trabajo.
+    function handleOrdenesTrabajo() {
+    // 📌 Escuchar el cambio en los radio buttons de la pregunta 7
+    document.querySelectorAll('input[name="pregunta7"]').forEach(input => {
+        input.addEventListener('change', function () {
+            let seccionOrdenes = document.getElementById('pregunta7_1');
+
+            if (this.value === "si") {
+                seccionOrdenes.style.display = "block";
+            } else {
+                seccionOrdenes.style.display = "none";
+                // Resetear los valores de los inputs cuando se oculta
+                seccionOrdenes.querySelectorAll('input[type="number"], input[type="date"], input[type="checkbox"]').forEach(input => {
+                    input.checked = false;  // Desmarca checkboxes
+                    input.value = "";       // Borra valores de cantidad y fecha
+                });
+                // Ocultar los inputs de cantidad y fecha si se oculta la sección
+                seccionOrdenes.querySelectorAll('.ordenes-inputs').forEach(div => {
+                    div.style.display = "none";
+                });
+            }
+        });
+    });
+
+    // 📌 Activar los inputs de cantidad y fecha cuando se marca el checkbox en cada grupo de órdenes de trabajo
+    document.querySelectorAll('.ordenes-checkbox input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            let inputsContainer = this.closest('.orden-trabajo').querySelector('.ordenes-inputs');
+
+            if (this.checked) {
+                inputsContainer.style.display = "flex";
+            } else {
+                inputsContainer.style.display = "none";
+                inputsContainer.querySelectorAll('input[type="number"], input[type="date"]').forEach(input => input.value = "");
+            }
+        });
+    });
+}
+
+
+
+    
 //Activadores de checkbox de cantidad de actividades y ultimo registro de actividades.
 function handleActividadInputs() {
     document.querySelectorAll('.opciones-checkbox input[type="checkbox"]').forEach(checkbox => {
@@ -219,6 +261,9 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
 
     loadCountries();
     handleDependencias();
+handleOrdenesTrabajo();
+
+
     handleActividadInputs();
 
     
