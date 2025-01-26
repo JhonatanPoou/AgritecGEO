@@ -485,6 +485,26 @@ select:focus {
     margin-bottom: 25px; /* Separación del contenido */
 }
 
+/* 📌 Estilos para las subcategorías de reportes en formato vertical */
+.subcategoria {
+    display: none; /* Se ocultan por defecto */
+    flex-direction: column; /* Distribuye los elementos en columna */
+    gap: 8px; /* Espaciado entre elementos */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 8px;
+    border-left: 4px solid #28a745; /* Línea indicativa a la izquierda */
+}
+
+/* 📌 Ajuste para que los checkboxes dentro de las subcategorías se vean en bloque */
+.subcategoria label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
 .pregunta p {
     font-weight: bold; /* Aplica negrita solo al texto de las preguntas */
