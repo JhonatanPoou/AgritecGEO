@@ -295,8 +295,6 @@
         <button type="button" class="opcion-segmento" data-value="Pulverizar">Pulverizar</button>
     </div>
 </div>
-
-
 </div> <!-- Fin de Sección Actividades -->
 
   <!-- 🔹 BOTONES DE NAVEGACIÓN PARA SECCIÓN 3 -->
@@ -304,6 +302,97 @@
     <button id="btnVolverActividades" class="btn-navegacion btn-volver">Volver</button>
     <button id="btnSiguienteActividades" class="btn-navegacion btn-siguiente">Siguiente</button>
   </div>
+    <!-- 📌 Sección 4 - Sección Avanzada -->
+<div id="seccionAvanzada" class="section">
+  <h2 class="categoria-preguntas">Sección Avanzada</h2>
+
+  <!-- Pregunta 8 -->
+  <div class="pregunta">
+    <p>¿Cree usted que este cliente utilice el módulo de Datos Analíticos para generar informes?</p>
+    <div class="opciones">
+      <label><input type="radio" name="pregunta8" value="si"> Sí</label>
+      <label><input type="radio" name="pregunta8" value="no"> No</label>
+    </div>
+  </div>
+
+  <!-- Pregunta 8.1 (Depende de pregunta8) -->
+  <div class="pregunta dependiente" id="pregunta8_1" style="display: none;">
+    <p>¿Qué tipo de reportes cree usted que suele usar?</p>
+    <div class="opciones-checkbox">
+      
+      <!-- Informe de Semillas -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informe de Semillas"> Informe de Semillas
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informe de Semillas" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Acres Sembrados"> Informe Acres Sembrados</label>
+        <label><input type="checkbox" name="subreportes" value="Reporte de Semillas"> Reporte de Semillas</label>
+        <label><input type="checkbox" name="subreportes" value="Resumen Recomendación Cultivos"> Resumen de recomendaciones de cultivos</label>
+      </div>
+
+      <!-- Informe de Fertilizante -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informe de Fertilizante"> Informe de Fertilizante
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informe de Fertilizante" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Resumen Recomendación Nutrientes"> Resumen de Recomendación de Nutrientes</label>
+        <label><input type="checkbox" name="subreportes" value="Resumen Requisitos Fertilizante"> Resumen de Requisitos de Fertilizante</label>
+        <label><input type="checkbox" name="subreportes" value="Resumen Aplic. Nutrientes"> Resumen Recomendación de Aplic. Nutrientes en el Suelo</label>
+        <label><input type="checkbox" name="subreportes" value="Aplicación Nutrientes Resumen"> Recom. Aplicación Nutrientes en el Suelo Resumen</label>
+        <label><input type="checkbox" name="subreportes" value="Otro Resumen Aplicación Etapa"> Otro Resumen de Aplicación (Por Etapa)</label>
+        <label><input type="checkbox" name="subreportes" value="Otro Resumen Aplicación Producto"> Otro Resumen de Aplicación (Por Producto)</label>
+      </div>
+
+      <!-- Informe de Pesticida/Producto -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informe de Pesticida/Producto"> Informe de Pesticida/Producto
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informe de Pesticida/Producto" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Aplicación de Productos"> Informe Aplicación de Productos</label>
+        <label><input type="checkbox" name="subreportes" value="Historial de Pesticida"> Historial de Pesticida</label>
+      </div>
+
+      <!-- Informes Financieros -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informes Financieros"> Informes Financieros
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informes Financieros" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Resumen Financiero de Cultivos"> Resumen Financiero de Cultivos</label>
+      </div>
+
+      <!-- Informes Generales -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informes Generales"> Informes Generales
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informes Generales" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Resumen de Cultivos"> Resumen de Cultivos</label>
+        <label><input type="checkbox" name="subreportes" value="Historial de Cultivos"> Informe de historial de cultivos</label>
+        <label><input type="checkbox" name="subreportes" value="Eventos Agrícolas"> Resumen de Eventos Agrícolas</label>
+        <label><input type="checkbox" name="subreportes" value="Aplicar Recomendaciones"> Aplicar recomendaciones como actuales</label>
+        <label><input type="checkbox" name="subreportes" value="Exportar Lotes"> Exportar Lotes a CSV</label>
+      </div>
+
+      <!-- Informes del Administrador de Lotes -->
+      <label>
+        <input type="checkbox" name="reportes" value="Informes del Administrador de Lotes"> Informes del Administrador de Lotes
+      </label>
+      <div class="actividad-inputs subcategoria" data-reporte="Informes del Administrador de Lotes" style="display: none;">
+        <label><input type="checkbox" name="subreportes" value="Imprimir Actividades"> Imprimir Actividades de Zona de Cultivo</label>
+        <label><input type="checkbox" name="subreportes" value="Formulario Personalizado"> Formulario Aplicación Personalizada</label>
+        <label><input type="checkbox" name="subreportes" value="Informe de Sostenibilidad"> Informe de Sostenibilidad del Procesador</label>
+        <label><input type="checkbox" name="subreportes" value="Programas de Lotes"> Programas de Lotes</label>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- 🔹 BOTONES DE NAVEGACIÓN PARA SECCIÓN 4 -->
+  <div class="contenedor-botones">
+    <button id="btnVolverAvanzada" class="btn-navegacion btn-volver">Volver</button>
+    <button id="btnSiguienteAvanzada" class="btn-navegacion btn-siguiente">Siguiente</button>
+  </div>
+</div>
+
 
 
     
