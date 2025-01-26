@@ -430,6 +430,48 @@ select:focus {
         width: 100%;
     }
 }
+/* 📌 Estilo base para las opciones de selección múltiple */
+.opciones-multiples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 🎨 Estilo para los botones */
+.opcion-segmento {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* 🎯 Efecto hover */
+.opcion-segmento:hover {
+    background-color: #e0e0e0;
+    border-color: #888;
+}
+
+/* 🔘 Estado activo cuando se selecciona */
+.opcion-segmento.selected {
+    background-color: #28a745;
+    color: white;
+    border-color: #218838;
+}
+
+/* 📱 Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .opciones-multiples {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 
 .pregunta p {
