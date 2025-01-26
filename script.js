@@ -186,24 +186,27 @@ function loadClientsByCountry(paisSeleccionado) {
         toggleNavigationButtons('seccionPais');
     });
 
-    document.getElementById('btnSiguiente').addEventListener('click', () => {
-        let allAnswered = true;
-        document.querySelectorAll('#seccionCliente .pregunta').forEach(pregunta => {
-            if (pregunta.style.display !== 'none') {
-                const inputs = pregunta.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
-                if (inputs.length === 0) {
-                    alert(`Debe responder la pregunta: "${pregunta.querySelector('p').innerText}"`);
-                    allAnswered = false;
-                }
+¿document.getElementById('btnSiguiente').addEventListener('click', () => {
+    let allAnswered = true;
+    document.querySelectorAll('#seccionCliente .pregunta').forEach(pregunta => {
+        if (pregunta.style.display !== 'none') {
+            const inputs = pregunta.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+            if (inputs.length === 0) {
+                alert(`Debe responder la pregunta: "${pregunta.querySelector('p').innerText}"`);
+                allAnswered = false;
             }
-        });
-        
-        if (allAnswered) {
-            toggleSeccion('seccionCliente', 'seccionActividades');
-            toggleNavigationButtons('seccionActividades');
-            handleActividadInputs();
         }
     });
+    
+    if (allAnswered) {
+        toggleSeccion('seccionCliente', 'seccionActividades');
+        toggleNavigationButtons('seccionActividades');
+
+        // 🔹 Llamamos la función aquí para que los inputs de cantidad y fecha se oculten hasta que el usuario marque los checkboxes.
+        handleActividadInputs();
+    }
+});
+
 
     document.getElementById('btnVolverActividades')?.addEventListener('click', () => {
         toggleSeccion('seccionActividades', 'seccionCliente');
@@ -216,6 +219,7 @@ function loadClientsByCountry(paisSeleccionado) {
 
     loadCountries();
     handleDependencias();
+    handleActividadInputs();
 
     
 });
