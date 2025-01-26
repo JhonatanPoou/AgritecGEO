@@ -295,6 +295,52 @@ select:focus {
     justify-content: space-between;
     gap: 15px;
 }
+/* ✅ Botones específicos para la Sección 4 (dentro del contenedor) */
+#btnVolverAvanzado,
+#btnSiguienteAvanzado {
+  width: 100px;
+  height: 40px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* 🟥 Botón Volver en la Sección 4 */
+#btnVolverAvanzado {
+  background-color: #f44336;
+}
+
+/* 🟩 Botón Siguiente en la Sección 4 */
+#btnSiguienteAvanzado {
+  background-color: #28a745;
+}
+
+/* ✅ Cuando la Sección 4 esté activa, los botones se mostrarán */
+#seccionAvanzada.active #btnVolverAvanzado,
+#seccionAvanzada.active #btnSiguienteAvanzado {
+  visibility: visible !important;
+  display: inline-block;
+}
+
+/* 🟢 Efecto hover */
+#btnVolverAvanzado:hover {
+  background-color: #d32f2f;
+}
+
+#btnSiguienteAvanzado:hover {
+  background-color: #218838;
+}
+
+
+
 
 /* 🔥 Hace que el contenedor se muestre cuando el checkbox está marcado */
 .opciones-checkbox input[type="checkbox"]:checked + .actividad-inputs {
@@ -489,12 +535,14 @@ select:focus {
 .subcategoria {
     display: none; /* Se ocultan por defecto */
     flex-direction: column; /* Distribuye los elementos en columna */
+    align-items: flex-start; /* 📌 Asegura alineación a la izquierda */
     gap: 8px; /* Espaciado entre elementos */
     margin-top: 10px;
     padding: 10px;
     background-color: #f9f9f9; /* Fondo suave */
     border-radius: 8px;
     border-left: 4px solid #28a745; /* Línea indicativa a la izquierda */
+    width: 100%; /* 📌 Hace que ocupe todo el ancho disponible */
 }
 
 /* 📌 Ajuste para que los checkboxes dentro de las subcategorías se vean en bloque */
@@ -504,6 +552,7 @@ select:focus {
     gap: 10px;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%; /* 📌 Asegura alineación */
 }
 
 .pregunta p {
