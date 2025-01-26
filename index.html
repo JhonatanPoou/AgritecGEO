@@ -245,14 +245,41 @@
 </div>
 
 
-  <!-- Pregunta 7 -->
-  <div class="pregunta">
-    <p>¿El cliente asigna responsables a las actividades?</p>
+ <!-- Pregunta 7 -->
+<div class="pregunta">
+    <p>¿El cliente planifica sus actividades con el módulo de órdenes de trabajo?</p>
     <div class="opciones">
-      <label><input type="radio" name="pregunta7" value="si"> Sí</label>
-      <label><input type="radio" name="pregunta7" value="no"> No</label>
+        <label><input type="radio" name="pregunta7" value="si"> Sí</label>
+        <label><input type="radio" name="pregunta7" value="no"> No</label>
     </div>
-  </div>
+</div>
+
+<!-- Pregunta 7.1 (Depende de pregunta7) -->
+<div class="pregunta dependiente" id="pregunta7_1" style="display: none;">
+    <p>Órdenes de trabajo planificadas:</p>
+    <div class="actividad-inputs">
+        <label class="label-cantidad">Cantidad</label>
+        <input type="number" class="cantidad-input" data-labor="OrdenesPlanificadas" placeholder="0" min="0">
+        <label class="label-fecha">Última fecha de orden planificada</label>
+        <input type="date" class="fecha-input" data-labor="OrdenesPlanificadas">
+    </div>
+
+    <p>Órdenes de trabajo en ejecución:</p>
+    <div class="actividad-inputs">
+        <label class="label-cantidad">Cantidad</label>
+        <input type="number" class="cantidad-input" data-labor="OrdenesEjecucion" placeholder="0" min="0">
+        <label class="label-fecha">Última fecha de orden en ejecución</label>
+        <input type="date" class="fecha-input" data-labor="OrdenesEjecucion">
+    </div>
+
+    <p>Órdenes de trabajo finalizadas:</p>
+    <div class="actividad-inputs">
+        <label class="label-cantidad">Cantidad</label>
+        <input type="number" class="cantidad-input" data-labor="OrdenesFinalizadas" placeholder="0" min="0">
+        <label class="label-fecha">Última fecha de orden finalizada</label>
+        <input type="date" class="fecha-input" data-labor="OrdenesFinalizadas">
+    </div>
+</div>
 
 
 </div> <!-- Fin de Sección Actividades -->
