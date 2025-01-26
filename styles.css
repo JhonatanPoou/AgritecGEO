@@ -544,16 +544,16 @@ select:focus {
 
 /* 📌 Estilos para las subcategorías de reportes en formato vertical */
 .subcategoria {
-    display: none; /* Se ocultan por defecto */
-    flex-direction: column; /* Distribuye los elementos en columna */
-    align-items: flex-start; /* 📌 Asegura alineación a la izquierda */
-    gap: 8px; /* Espaciado entre elementos */
-    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /* ✅ Alinea a la izquierda */
+    gap: 8px; 
+    margin-left: 20px; /* 🔹 Da un ligero margen para diferenciarse de la categoría principal */
     padding: 10px;
-    background-color: #f9f9f9; /* Fondo suave */
+    background-color: #f9f9f9;
     border-radius: 8px;
     border-left: 4px solid #28a745; /* Línea indicativa a la izquierda */
-    width: 100%; /* 📌 Hace que ocupe todo el ancho disponible */
+    width: auto;
 }
 
 /* 📌 Ajuste para que los checkboxes dentro de las subcategorías se vean en bloque */
@@ -563,7 +563,7 @@ select:focus {
     gap: 10px;
     font-size: 1rem;
     cursor: pointer;
-    width: 100%; /* 📌 Asegura alineación */
+    width: 100%;
 }
 
 .pregunta p {
