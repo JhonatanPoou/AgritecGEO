@@ -186,7 +186,7 @@ function loadClientsByCountry(paisSeleccionado) {
         toggleNavigationButtons('seccionPais');
     });
 
-¿document.getElementById('btnSiguiente').addEventListener('click', () => {
+document.getElementById('btnSiguiente').addEventListener('click', () => {
     let allAnswered = true;
     document.querySelectorAll('#seccionCliente .pregunta').forEach(pregunta => {
         if (pregunta.style.display !== 'none') {
