@@ -236,7 +236,34 @@ function handleActividadInputs() {
         toggleSeccion('seccionCliente', 'seccionPais');
         toggleNavigationButtons('seccionPais');
     });
+//Manejo de preguntas seccion avanzado.
 
+    // 📌 Función para manejar las dependencias en la Sección Avanzada
+function handleDependenciasSeccionAvanzada() {
+    // ✅ Mostrar/Ocultar la Pregunta 8.1 cuando el usuario responde Sí en la Pregunta 8
+    document.querySelectorAll('input[name="pregunta8"]').forEach(input => {
+        input.addEventListener('change', function () {
+            let seccion = document.getElementById('pregunta8_1');
+            seccion.style.display = this.value === "si" ? "block" : "none";
+        });
+    });
+
+    // ✅ Mostrar/Ocultar subcategorías dentro de Pregunta 8.1
+    document.querySelectorAll('input[name="reportes"]').forEach(input => {
+        input.addEventListener('change', function () {
+            let subcategoria = document.querySelector(`.subcategoria[data-reporte="${this.value}"]`);
+            if (subcategoria) {
+                subcategoria.style.display = this.checked ? "block" : "none";
+            }
+        });
+    });
+}
+
+
+    handleDependenciasSeccionAvanzada();
+
+
+    
 document.getElementById('btnSiguiente').addEventListener('click', () => {
     let allAnswered = true;
     document.querySelectorAll('#seccionCliente .pregunta').forEach(pregunta => {
@@ -273,6 +300,7 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
     handleOrdenesTrabajo();
     handleMultipleSelection();
     handleActividadInputs();
+    handleDependenciasSeccionAvanzada();
 
     
 });
