@@ -181,6 +181,7 @@ select:focus {
 /* 🟩 Preguntas con mejor espaciado */
 .pregunta {
   margin-bottom: 25px;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
