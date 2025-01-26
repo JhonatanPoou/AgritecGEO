@@ -350,6 +350,88 @@ select:focus {
     display: flex !important;
 }
 
+/* ✅ Contenedor de los inputs para Órdenes de Trabajo */
+.ordenes-inputs {
+    display: none; /* Se oculta por defecto hasta que el checkbox se marque */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* 🔥 Hace que los inputs aparezcan cuando el checkbox está marcado */
+.ordenes-checkbox input[type="checkbox"]:checked ~ .ordenes-inputs {
+    display: flex !important;
+}
+
+/* 📌 Input de cantidad (igual al de actividades) */
+.ordenes-inputs input[type="number"] {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* 📅 Input de fecha */
+.ordenes-inputs input[type="date"] {
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: white;
+    text-align: center;
+}
+
+/* 🎨 Etiquetas de cantidad y fecha */
+.label-cantidad, .label-fecha {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+    min-width: 150px;
+}
+
+/* 📌 Ajuste para mejorar la alineación */
+.orden-trabajo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* 📌 Hace que los inputs sean visibles cuando el checkbox se activa */
+.ordenes-checkbox input[type="checkbox"]:checked ~ .ordenes-inputs {
+    display: flex !important;
+}
+
+/* 🎨 Ajuste responsivo */
+@media (max-width: 768px) {
+    .ordenes-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .label-cantidad, .label-fecha {
+        min-width: auto;
+    }
+
+    .cantidad-input, .fecha-input {
+        width: 100%;
+    }
+}
+
+
 .pregunta p {
     font-weight: bold; /* Aplica negrita solo al texto de las preguntas */
 }
