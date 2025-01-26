@@ -212,14 +212,19 @@ select:focus {
 .opciones-checkbox label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .opciones-checkbox input[type="checkbox"] {
   transform: scale(1.2);
-  cursor: pointer;
+  
+}
+
+.opciones-checkbox .actividad-inputs {
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 /* ✅ Botones específicos para la Sección 3 (dentro del contenedor) */
@@ -266,26 +271,50 @@ select:focus {
   background-color: #218838;
 }
 
+.actividad-inputs {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.opciones-checkbox input[type="checkbox"]:checked + .actividad-inputs {
+    display: flex;
+}
+
 /* 📌 Input de cantidad (más redondeado y moderno) */
 .actividad-inputs input[type="number"] {
-  width: 90px;
-  padding: 8px;
+  width: 140px;
+  height: 30px;
+  padding: 5px;
   display:none;
   flex-direction: row;
   gap: 10 px;
   align-items: center;
   font-size: 1rem;
   text-align: center;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
+  
   border-radius: 5px; /* Más redondeado */
   background: white;
   transition: all 0.3s ease;
 }
 
+.actividad-inputs input[type="date"] {
+    width: 140px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
 /* 🎨 Efecto cuando el usuario selecciona el input */
-.actividad-inputs input[type="number"]:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
-  outline: none;
+.actividad-inputs input[type="number"] {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
 }
 
