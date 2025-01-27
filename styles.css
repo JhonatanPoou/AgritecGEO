@@ -569,4 +569,10 @@ select:focus {
 .pregunta p {
     font-weight: bold; /* Aplica negrita solo al texto de las preguntas */
 }
+/* ✅ Asegura que los botones en la Sección Avanzada sean visibles cuando la sección esté activa */
+#seccionAvanzada.active ~ .contenedor-botones #btnVolverAvanzado,
+#seccionAvanzada.active ~ .contenedor-botones #btnSiguienteAvanzado {
+  visibility: visible !important;
+  display: inline-block !important;
+}
 
