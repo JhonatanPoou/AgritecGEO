@@ -126,7 +126,7 @@ if (btnVolverAvanzada && btnSiguienteAvanzado) {
             }
              }, 300);
     }
-
+ }
     }
 
 
