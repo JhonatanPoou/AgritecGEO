@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ DOM completamente cargado");
+console.log("✅ DOM completamente cargado");
 
     let clientesPorPais = {}; 
 
@@ -101,11 +100,9 @@ function loadClientsByCountry(paisSeleccionado) {
         }, 500);
     }
 
-function toggleNavigationButtons(currentSection) {
-    // 🔹 Oculta todos los botones antes de mostrar los correctos
+ function toggleNavigationButtons(currentSection) {
     document.querySelectorAll('.btn-navegacion').forEach(btn => {
         btn.style.visibility = 'hidden';
-        btn.style.display = 'none';
     });
 
     if (currentSection === 'seccionCliente') {
@@ -115,11 +112,10 @@ function toggleNavigationButtons(currentSection) {
         document.getElementById('btnVolverActividades').style.visibility = 'visible';
         document.getElementById('btnSiguienteActividades').style.visibility = 'visible';
     } else if (currentSection === 'seccionAvanzada') {
-        setTimeout(() => { // 🔹 Espera a que la sección se active antes de mostrar los botones
+         setTimeout(() => { // 🔹 Espera a que la sección se active antes de mostrar los botones
             let btnVolverAvanzada = document.getElementById('btnVolverAvanzado');
             let btnSiguienteAvanzado = document.getElementById('btnSiguienteAvanzado');
-
-            if (btnVolverAvanzada && btnSiguienteAvanzado) {
+if (btnVolverAvanzada && btnSiguienteAvanzado) {
                 btnVolverAvanzada.style.visibility = 'visible';
                 btnVolverAvanzada.style.display = 'inline-block';
                 btnSiguienteAvanzado.style.visibility = 'visible';
@@ -128,10 +124,11 @@ function toggleNavigationButtons(currentSection) {
             } else {
                 console.warn("⚠️ Los botones de Sección Avanzada no están en el DOM.");
             }
-        }, 300);
+             }, 300);
+    }
+
     }
 }
-
 
     function handleDependencias() {
         document.querySelectorAll('.pregunta input[type="radio"]').forEach(input => {
@@ -344,4 +341,3 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
 
     
 });
-
