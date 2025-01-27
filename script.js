@@ -127,7 +127,7 @@ if (btnVolverAvanzada && btnSiguienteAvanzado) {
              }, 300);
     }
  }
-    }
+    
 
 
     function handleDependencias() {
