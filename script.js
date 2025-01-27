@@ -113,8 +113,11 @@ function loadClientsByCountry(paisSeleccionado) {
         document.getElementById('btnVolverActividades').style.visibility = 'visible';
         document.getElementById('btnSiguienteActividades').style.visibility = 'visible';
     } else if (currentSection === 'seccionAvanzada') {
+      console.log("📢 Sección Avanzada activa, verificando botones...");
         document.getElementById('btnVolverAvanzada').style.visibility = 'visible';
-        document.getElementById('btnSiguienteAvanzada').style.visibility = 'visible';
+        document.getElementById('btnVolverAvanzada').style.display = 'inline-block';
+        document.getElementById('btnSiguienteAvanzado').style.visibility = 'visible';
+        document.getElementById('btnSiguienteAvanzado').style.display = 'inline-block';
     }
 }
 
