@@ -338,6 +338,5 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
     handleMultipleSelection();
     handleActividadInputs();
     handleDependenciasSeccionAvanzada();
-
     
 });
