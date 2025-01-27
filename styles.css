@@ -305,22 +305,23 @@ select:focus {
     margin-top: 30px; /* Ajusta la separación del contenido */
 }
 /* ✅ Botones específicos para la Sección 4 (dentro del contenedor) */
-#btnVolverAvanzado,
+#btnVolverAvanzado, 
 #btnSiguienteAvanzado {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    width: 100px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 50%;
+    font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     z-index: 1000;
+    display: none; /* Evitar que se muestre en otras secciones */
+    opacity: 0; /* Inicia oculto */
 }
 
 /* 🟥 Botón Volver en la Sección 4 */
@@ -338,8 +339,10 @@ select:focus {
 #seccionAvanzada.active #btnVolverAvanzado,
 #seccionAvanzada.active #btnSiguienteAvanzado {
     visibility: visible !important;
-    display: inline-block;
+    display: inline-block !important;
+    opacity: 1 !important;
 }
+
 
 /* 🟢 Efecto hover */
 #btnVolverAvanzado:hover {
@@ -575,4 +578,5 @@ select:focus {
 #seccionAvanzada.active + .contenedor-botones #btnSiguienteAvanzado {
     visibility: visible !important;
     display: inline-block !important;
+  opacity: 1 !important;
 }
