@@ -240,9 +240,10 @@ function handleActividadInputs() {
         toggleNavigationButtons('seccionPais');
     });
 //Manejo de preguntas seccion avanzado.
-
     // 📌 Función para manejar las dependencias en la Sección Avanzada
 function handleDependenciasSeccionAvanzada() {
+    console.log("✅ Script de dependencias cargado correctamente");
+
     // ✅ Mostrar/Ocultar la Pregunta 8.1 cuando el usuario responde Sí en la Pregunta 8
     document.querySelectorAll('input[name="pregunta8"]').forEach(input => {
         input.addEventListener('change', function () {
@@ -256,14 +257,18 @@ function handleDependenciasSeccionAvanzada() {
         input.addEventListener('change', function () {
             let subcategoria = document.querySelector(`.subcategoria[data-reporte="${this.value}"]`);
             if (subcategoria) {
-                subcategoria.style.display = this.checked ? "block" : "none";
+                if (this.checked) {
+                    subcategoria.style.display = "flex"; // 🔹 Usa "flex" para alineación correcta
+                } else {
+                    subcategoria.style.display = "none";
+                }
             }
         });
     });
 }
 
 
-    handleDependenciasSeccionAvanzada();
+  
 
 
     
