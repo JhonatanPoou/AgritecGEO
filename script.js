@@ -242,9 +242,7 @@ function handleActividadInputs() {
 //Manejo de preguntas seccion avanzado.
     // 📌 Función para manejar las dependencias en la Sección Avanzada
 function handleDependenciasSeccionAvanzada() {
-    console.log("✅ Script de dependencias cargado correctamente");
-
-    // ✅ Mostrar/Ocultar la Pregunta 8.1 cuando el usuario responde Sí en la Pregunta 8
+    // ✅ Manejar la visibilidad de la Pregunta 8.1
     document.querySelectorAll('input[name="pregunta8"]').forEach(input => {
         input.addEventListener('change', function () {
             let seccion = document.getElementById('pregunta8_1');
@@ -252,20 +250,37 @@ function handleDependenciasSeccionAvanzada() {
         });
     });
 
-    // ✅ Mostrar/Ocultar subcategorías dentro de Pregunta 8.1
+    // ✅ Mostrar/Ocultar subcategorías cuando la categoría principal está activada/desactivada
     document.querySelectorAll('input[name="reportes"]').forEach(input => {
         input.addEventListener('change', function () {
             let subcategoria = document.querySelector(`.subcategoria[data-reporte="${this.value}"]`);
+            
             if (subcategoria) {
                 if (this.checked) {
-                    subcategoria.style.display = "flex"; // 🔹 Usa "flex" para alineación correcta
+                    subcategoria.style.display = "block";
                 } else {
-                    subcategoria.style.display = "none";
+                    subcategoria.style.display = "none"; // 🔥 Se oculta SOLO si la categoría principal está desactivada
                 }
             }
         });
     });
+
+    // ✅ Evitar que se oculten las subcategorías cuando se desmarca una de ellas
+    document.querySelectorAll('.subcategoria input[type="checkbox"]').forEach(subInput => {
+        subInput.addEventListener('change', function () {
+            let subcategoriaPadre = this.closest('.subcategoria');
+            let categoriaPrincipal = document.querySelector(`input[name="reportes"][value="${subcategoriaPadre.dataset.reporte}"]`);
+            
+            // 🔹 Si la categoría principal sigue activada, mantener la subcategoría visible
+            if (categoriaPrincipal && categoriaPrincipal.checked) {
+                subcategoriaPadre.style.display = "block";
+            }
+        });
+    });
 }
+
+
+
 
 
   
