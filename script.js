@@ -1,4 +1,5 @@
-console.log("✅ DOM completamente cargado");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ DOM completamente cargado");
 
     let clientesPorPais = {}; 
 
@@ -112,23 +113,10 @@ function loadClientsByCountry(paisSeleccionado) {
         document.getElementById('btnVolverActividades').style.visibility = 'visible';
         document.getElementById('btnSiguienteActividades').style.visibility = 'visible';
     } else if (currentSection === 'seccionAvanzada') {
-         setTimeout(() => { // 🔹 Espera a que la sección se active antes de mostrar los botones
-            let btnVolverAvanzada = document.getElementById('btnVolverAvanzado');
-            let btnSiguienteAvanzado = document.getElementById('btnSiguienteAvanzado');
-if (btnVolverAvanzada && btnSiguienteAvanzado) {
-                btnVolverAvanzada.style.visibility = 'visible';
-                btnVolverAvanzada.style.display = 'inline-block';
-                btnSiguienteAvanzado.style.visibility = 'visible';
-                btnSiguienteAvanzado.style.display = 'inline-block';
-                console.log("✅ Botones de Sección Avanzada mostrados correctamente.");
-            } else {
-                console.warn("⚠️ Los botones de Sección Avanzada no están en el DOM.");
-            }
-             }, 300);
+        document.getElementById('btnVolverAvanzada').style.visibility = 'visible';
+        document.getElementById('btnSiguienteAvanzada').style.visibility = 'visible';
     }
- }
-    
-
+}
 
     function handleDependencias() {
         document.querySelectorAll('.pregunta input[type="radio"]').forEach(input => {
@@ -338,5 +326,6 @@ document.getElementById('btnSiguiente').addEventListener('click', () => {
     handleMultipleSelection();
     handleActividadInputs();
     handleDependenciasSeccionAvanzada();
+
     
 });
