@@ -128,7 +128,7 @@ if (btnVolverAvanzada && btnSiguienteAvanzado) {
     }
 
     }
-}
+
 
     function handleDependencias() {
         document.querySelectorAll('.pregunta input[type="radio"]').forEach(input => {
