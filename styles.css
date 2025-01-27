@@ -571,10 +571,8 @@ select:focus {
 }
 
 /* ✅ Asegura que los botones en la Sección Avanzada sean visibles cuando la sección esté activa */
-#seccionAvanzada.active ~ .contenedor-botones #btnVolverAvanzado,
-#seccionAvanzada.active ~ .contenedor-botones #btnSiguienteAvanzado {
-  visibility: visible !important;
-  display: inline-block !important;
+#seccionAvanzada.active + .contenedor-botones #btnVolverAvanzado,
+#seccionAvanzada.active + .contenedor-botones #btnSiguienteAvanzado {
+    visibility: visible !important;
+    display: inline-block !important;
 }
-
-
